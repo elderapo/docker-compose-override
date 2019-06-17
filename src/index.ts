@@ -23,10 +23,20 @@ const main = async () => {
   argvTopass.shift();
   argvTopass.shift();
 
-  const options = [...dockerComposes.map(file => `-f ${file}`), ...argvTopass];
+  const options: string[] = [];
+
+  for (const co of dockerComposes) {
+    options.push("-f");
+    options.push(co);
+  }
+
+  options.push(...argvTopass);
 
   const childProcess = spawn("docker-compose", options, {
-    stdio: [process.stdin, process.stdout, process.stderr]
+    stdio: "inherit",
+    env: {
+      ...process.env
+    }
   });
 };
 
