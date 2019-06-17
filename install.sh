@@ -20,6 +20,6 @@ chmod +x build/dco
 
 TARGET_DIR=/usr/local/bin
 
-sudo mv build/dco $TARGET_DIR
+sudo cp -r build/dco $TARGET_DIR
 sudo ln -sf $TARGET_DIR/dco $TARGET_DIR/docker-compose-override
 echo 'dco (docker-compose-override) has been successfully installed 👍!'
