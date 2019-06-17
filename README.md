@@ -3,7 +3,7 @@
 1. Install:
 
 ```bash
-wget https://raw.githubusercontent.com/elderapo/docker-compose-override/master/install.sh | bash
+wget -O - https://raw.githubusercontent.com/elderapo/docker-compose-override/master/install.sh | bash
 ```
 
 2. Set env `DOCKER_COMPOSE_OVERRIDES`
