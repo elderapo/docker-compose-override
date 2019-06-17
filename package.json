@@ -1,7 +1,7 @@
 {
   "name": "ts-node-starter",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/index.js",
   "license": "MIT",
   "dependencies": {
     "@types/dotenv": "^6.1.1",
@@ -13,7 +13,6 @@
   },
   "scripts": {
     "start": "ts-node ./src/index.ts",
-    "build": "ncc build src/index.ts -o build -m -s && rm -r build/assets",
-    "package": "pkg build/index.js"
+    "build": "ncc build src/index.ts -o build -m && rm -rf build/assets"
   }
 }

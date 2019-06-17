@@ -3,7 +3,9 @@ import { config } from "dotenv";
 import * as path from "path";
 
 const main = async () => {
-  config({ path: path.join(process.cwd(), ".env") });
+  const targetEnv = path.join(process.env.PWD as string, ".env");
+
+  config({ path: targetEnv });
 
   const { DOCKER_COMPOSE_OVERRIDES } = process.env;
 

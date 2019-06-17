@@ -1,18 +1,25 @@
 # How to use:
 
-1. Set project name:
+1. Install:
+
 ```bash
-MY_PROJECT=my-project
+wget https://raw.githubusercontent.com/elderapo/docker-compose-override/master/install.sh | bash
 ```
 
-2. Install:
+2. Set env `DOCKER_COMPOSE_OVERRIDES`
+
 ```bash
-git clone --depth=1 --branch=master git@github.com:elderapo/ts-node-starter.git $MY_PROJECT
-cd $MY_PROJECT
-rm -rf .git
-git init
-git add .
-git commit -m "Init"
-yarn
-yarn start
+export DOCKER_COMPOSE_OVERRIDES=docker-compose.yml,docker-compose.override-1.yml,docker-compose.override-2.yml
+```
+
+or write in `.env`
+
+```bash
+DOCKER_COMPOSE_OVERRIDES=docker-compose.yml,docker-compose.override-1.yml,docker-compose.override-2.yml
+```
+
+3. Use `dco` instead of `docker-compose`
+
+```bash
+dco up -d --build
 ```
