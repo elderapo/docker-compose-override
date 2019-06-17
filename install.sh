@@ -3,7 +3,7 @@
 TMP=$(mktemp -d)
 echo "Cloning repo..." 
 
-git clone --quiet git@github.com:elderapo/docker-compose-override.git $TMP
+git clone --quiet --depth 1 git@github.com:elderapo/docker-compose-override.git $TMP
 { # try
     echo "Installing deps using yarn..."
     yarn install --silent --no-progress --cwd ${TMP} --frozen-lockfile
