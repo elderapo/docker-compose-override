@@ -18,7 +18,7 @@ or write in `.env`
 DOCKER_COMPOSE_OVERRIDES=docker-compose.yml,docker-compose.override-1.yml,docker-compose.override-2.yml
 ```
 
-3. Use `dco` instead of `docker-compose`
+3. Use `dco`/`docker-compose-override` instead of `docker-compose`
 
 ```bash
 dco up -d --build
