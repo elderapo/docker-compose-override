@@ -38,6 +38,10 @@ const main = async () => {
       ...process.env
     }
   });
+
+  childProcess.on("exit", code => {
+    process.exit(code === null ? 0 : code);
+  });
 };
 
 main();
