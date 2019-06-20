@@ -1,5 +1,7 @@
 # !/usr/bin/env bash
 
+set -e
+
 TMP=$(mktemp -d)
 echo "Cloning repo..."
 
